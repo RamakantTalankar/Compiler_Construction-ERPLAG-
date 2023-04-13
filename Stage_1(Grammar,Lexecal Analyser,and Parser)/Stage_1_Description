@@ -1,0 +1,2 @@
+This was the first stage of submission where lexical analyser and parser were created.Input was source code written in a language  called ERPLAG(provided by course instructor).
+Output was lexical tokens of the code and parse tree for the code.
