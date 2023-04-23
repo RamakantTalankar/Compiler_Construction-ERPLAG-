@@ -867,3 +867,35 @@ TOKEN getNextToken(FILE *fp, map mp)
         }
     }
 }
+
+
+
+
+// int main()
+// {
+//     FILE* ptr=fopen("testcase.txt","r");
+//     map mp;
+//     mp=create_hashtable();
+//     ht_init(mp);
+//     fill_buffer_int(ptr);
+
+//     TOKEN testtkn;
+//     while(1)
+//     {
+//         char * str = "ENDFILE";
+
+//         testtkn = getNextToken(ptr, mp);
+//         if(strcmp(testtkn.token, str) == 0)
+//             break;
+//         if (strcmp(testtkn.token, "LEX_ERR") == 0)
+//         {
+//             printf("Line_no: %d , value: %s , Lexical Error", testtkn.line_num, testtkn.value_id);
+//         }
+//         if(strcmp(testtkn.token, "NUM") == 0)
+//             printf("Line_no: %d, lexeme: %d, token: %s \n", testtkn.line_num, testtkn.value_num, testtkn.token);
+//         else if(strcmp(testtkn.token, "RNUM") == 0)
+//             printf("Line_no: %d, lexeme: %.20lf, token: %s \n", testtkn.line_num, testtkn.value_rnum, testtkn.token);
+//         else
+//             printf("Line_no: %d, lexeme: %s, token: %s \n", testtkn.line_num, testtkn.value_id, testtkn.token);
+//     }
+// }
