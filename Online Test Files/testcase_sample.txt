@@ -1,0 +1,73 @@
+** Test case : Q2 All parts
+ONLINE question 2 (a)(b),(c), (d) and (e): 
+For (a): ERRORs at lines 64, 66 and 83
+For (b): Count is 5 at line 151 (correct the test case if any end mismatches with the start syntactically)
+For (c): Not an error now at lines 73, 250, 283,332 but an error at line 341
+For (d): ERRORs at line 125, 183 and 185
+For (e): Not an error at lines 47 and 70, but an error at line 127.
+
+(correct the test case if any syntax error exists)
+
+
+
+
+--------------------------------------------
+Original Test case 8: Testing function overloading and recursion 
+This Includes 
+1. A function with the same name cannot appear more than once (overloading check)
+2. A function cannot call itself (recursion check)
+3. precedence of function definitions before their use
+4. Assignment of output parameters 
+5. Number and types of input and output parameters (extension of test case 6)
+6. static bound checking and static type checking in expressions - arithmetic and boolean (extension of test case 5) **
+
+** Multiple level nesting using integer, real, boolean data types including static array data type**
+**Variant of test case 7**
+
+declare module function1;
+declare module function2;
+declare module function4;
+
+<<module var_demo_array>>
+takes input [x:integer, m:array [2..20] of integer, p:real];
+returns [ n:integer, k: boolean];
+start
+	declare a,b,h:integer;	
+	get_value(b);
+	declare b4: array[100..150] of boolean;
+	declare p: array[2..20] of integer;	
+	a:= m[5]+3;				   **Not an error: array index within bounds**
+	use module function2 with parameters a,b;  **NEW ERROR: number of input parameters mismatch, but error not due to module def as module function2 is declared before this call**
+	p:= m;					   **Not an error: type expressions of array variables p and m are same and assignment is a valid operation**
+	k:=true;	
+	p:= m + p;                                 **ERROR: array variables m and p cannot be added**
+	declare v1, v2:real;	
+	p[10]:= a*b-20*h;                          **Not an error: array index within bounds**
+	declare b7: array[35..50] of real;			 
+	while(k AND x<=m[11] OR false AND w9pqrstuvwxyz679877887)	**ONLINE: IMPLICITID used here - no type error**
+	start
+		declare p, u:integer;
+		declare b: array[2..20] of integer;
+		declare W1: boolean;
+		declare b5, b6: array[35..50] of real;
+		b:= m;
+		[v1, u, k, p]:=use module function1 with parameters b4, v2, p, b5, u;	**not an error**			
+		b[2]:= u+m[25];			   **ERROR: element of array m is out of bound** 
+		p:= b[18]*18.56E+2;		   **ERROR: type mismatch **
+		[p, W1]:=use module var_demo_array with parameters u, b, v1;       **ONLINE: not an error as first recursive call is exempted**
+		declare v3:integer;
+		[v1, u, k, v3]:=use module function1 with parameters b4, v2, p, v3, u;	**ERROR: input parameter type mismatch **	
+		p := p+1;
+		[p, W1]:=use module var_demo_array with parameters u, b, v1;       **ONLINE: not an error as second recursive call is exempted**	
+		u:=u+p;
+		p:=p-b[10];
+		[p, W1]:=use module var_demo_array with parameters p, b, v1;       **ONLINE: ERROR as third recursive call is not exempted**
+		b5[40]:=b6[49]+ 18.56E+2;
+		[p, W1]:=use module var_demo_array with parameters p, b, v1;       **ONLINE: ERROR as fourth recursive call is not exempted**
+	end
+        a:= a - p*b;				   	**ERROR: types of p and b are different**
+	b:= b+3;
+	k:= a>b OR b>100 AND w9pqrstyz6887;		**ONLINE: IMPLICITID used here - no type error**
+	[v1, a, k, h]:=use module function1 with parameters b7, v2, p, b7, b;	**ERROR: input parameter type mismatch **			
+	print(k);	
+end						 ** ONLINE: not an error is the output parameter n is not assigned any value-first exemption**
